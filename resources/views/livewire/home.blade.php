@@ -1,6 +1,6 @@
 <div>
      <!-- Promo banner start -->
-    <div id="sticky-banner" tabindex="-1" class="fixed top-0 left-0 z-50 @if($banner == 'show') flex @else hidden @endif  justify-between w-full p-4 border-b border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+    <div id="sticky-banner" tabindex="-1" class="fixed top-0 left-0 z-50 flex justify-between w-full p-4 border-b border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
         <div class="flex items-center mx-auto">
             <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
                 <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600 w-6 h-6 items-center justify-center">
@@ -11,12 +11,12 @@
                 </span>
                 <span>30% de réduction sur toutes mes prestations jusqu'au 31 Septembre 2023 avec le code <span class="font-medium border-2 rounded-md lg:p-1">SUMMER2023</span></span>
             </p>
-            <button type="button" wire:click="$set('content', 'estimate')" class="ml-2 px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
+            <a href="{{ route('estimate') }}" class="ml-2 px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
                 Commander
-            </button>
+            </a>
         </div>
         <div class="flex items-center">
-            <button wire:click="$set('banner', 'hidden')" data-dismiss-target="#sticky-banner" type="button" class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
+            <button data-dismiss-target="#sticky-banner" type="button" class="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                 </svg>

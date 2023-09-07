@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-            {{ __('Dashboard') }}
-
+        {{ __('Messages') }}
     </x-slot>
 
 
-                <x-welcome />
+@livewire('messages')
+
 
 </x-app-layout>
