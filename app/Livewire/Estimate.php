@@ -2,6 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Mail\RequestEstimate;
+use App\Models\Estimate as ModelsEstimate;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class Estimate extends Component
@@ -69,7 +72,7 @@ class Estimate extends Component
             'promo_code_upper' => 'string|nullable|in:SUMMER30',
         ]);
 
-        Estimate::create(
+       $estimate_request = ModelsEstimate::create(
 
             [
                 'name' => $this->name_estimate,
@@ -86,8 +89,12 @@ class Estimate extends Component
                 'other' => $this->other,
                 'description' => $this->decription_estimate,
                 'promo_code' => $this->promo_code_upper
-            ]
-        );
+            ]);
+
+            $estimate = ModelsEstimate::findOrFail($estimate_request->id);
+
+            Mail::to('contact@yassinelabhih.com')->send(new RequestEstimate($estimate));
+
 
         return  redirect()->route('home')->with('success', 'Votre demande de devis a été envoyé avec succès !');
     }

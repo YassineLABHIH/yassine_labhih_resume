@@ -24,6 +24,8 @@
 
             </a>
 
+            @dump($color)
+
             <div class="grid grid-cols-3 justify-center gap-4">
 
                 <div>
@@ -36,48 +38,44 @@
 
                     <!-- Dropdown menu -->
                     <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                        <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHelperRadioButton">
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    <div class="inline-flex items-center">
-                                        <span class="mr-1 flex h-3 w-3 rounded-full bg-indigo-500"></span>
-                                        Indigo
-                                    </div>
-                                </a>
+                              <div wire:click="$refresh" class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <div  wire:click="changeColor" class="flex items-center h-5">
+                                    <input checked id="helper-radio-4" name="color" wire:click="$set('color', 'indigo')" type="radio" value="indigo" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                </div>
+                                <div class="ml-2 text-sm">
+                                    <label for="helper-radio-4" class="font-medium text-gray-900 dark:text-gray-300">
+                                      <div>Indigo</div>
+                                    </label>
+                                </div>
+                              </div>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    <div class="inline-flex items-center">
-                                        <span class="mr-1 flex h-3 w-3 rounded-full bg-blue-500"></span>
-                                        Bleu
-                                    </div>
-                                </a>
+                              <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <div wire:click="changeColor" class="flex items-center h-5">
+                                    <input id="helper-radio-5"  type="radio" name="color" wire:click="$set('color', 'blue')" value="blue" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                </div>
+                                <div class="ml-2 text-sm">
+                                    <label for="helper-radio-5" class="font-medium text-gray-900 dark:text-gray-300">
+                                      <div>Company</div>
+                                    </label>
+                                </div>
+                              </div>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    <div class="inline-flex items-center">
-                                        <span class="mr-1 flex h-3 w-3 rounded-full bg-green-500"></span>
-                                        Vert
-                                    </div>
-                                </a>
+                              <div class="flex p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                <div class="flex items-center h-5">
+                                    <input id="helper-radio-6"  type="radio" name="color" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                </div>
+                                <div class="ml-2 text-sm">
+                                    <label for="helper-radio-6" class="font-medium text-gray-900 dark:text-gray-300">
+                                      <div>Non profit</div>
+                                    </label>
+                                </div>
+                              </div>
                             </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    <div class="inline-flex items-center">
-                                        <span class="mr-1 flex h-3 w-3 rounded-full bg-stone-500"></span>
-                                        Gris
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    <div class="inline-flex items-center">
-                                        <span class="mr-1 flex h-3 w-3 rounded-full bg-pink-500"></span>
-                                        Rose
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                          </ul>
                     </div>
 
 

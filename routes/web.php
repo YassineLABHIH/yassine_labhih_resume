@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EstimateController;
 use App\Http\Controllers\MessageController;
 use App\Livewire\About;
 use App\Livewire\Contact;
@@ -34,15 +35,6 @@ Route::get('/prices', Prices::class)->name('prices');
 Route::get('/portfolio', Portfolio::class)->name('portfolio');
 Route::get('/contact', Contact::class)->name('contact');
 Route::get('/estimate', Estimate::class)->name('estimate');
-
-
-Route::get('/messages', [MessageController::class, 'index'])->name('message.index');
-Route::post('/messages', [MessageController::class, 'massDestroy'])->name('message.mass_delete');
-Route::get('/message/{id}', [MessageController::class, 'show'])->name('message.show');
-Route::post('/message/delete/{id}', [MessageController::class, 'destroy'])->name('message.delete');
-
-
-
 
 
 Route::middleware([

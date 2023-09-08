@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Mail\SendMessage;
 use App\Models\Message;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
@@ -28,7 +29,7 @@ class Contact extends Component
             'message' => 'required|string'
         ]);
 
-/*
+        /*
 
         Mail::send('emails.send_message', [
             'name' => $this->name,
@@ -45,9 +46,18 @@ class Contact extends Component
 
     */
 
-        Message::create(
+
+
+
+
+        $new_message = Message::create(
             $this->only(['name', 'first_name', 'email', 'tel', 'subject', 'message'])
         );
+
+        $message = Message::findOrFail($new_message->id);
+
+
+        Mail::to('contact@yassinelabhih.com')->send(new SendMessage($message));
 
         return  redirect()->route('home')->with('success', 'Votre message a été envoyé avec succès !');
     }

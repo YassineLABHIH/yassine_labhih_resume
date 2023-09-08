@@ -5,6 +5,4 @@
     </x-slot>
 
 
-                <x-welcome />
-
 </x-app-layout>
